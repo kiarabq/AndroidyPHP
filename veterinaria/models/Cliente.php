@@ -10,13 +10,12 @@ class Cliente extends Conexion{
 
   public function add($data = []){
     try{
-      $query = $this->access->prepare("CALL spu_clientes_registrar(?,?,?,?)");
+      $query = $this->access->prepare("CALL spu_clientes_registrar(?,?,?)");
       $query->execute(
         array(
           $data['apellidos'],
           $data['nombres'],
-          $data['dni'],
-          $data['claveacceso']
+          $data['dni']
         )
         );
     }catch(Exception $e){
@@ -33,4 +32,31 @@ class Cliente extends Conexion{
       die($e->getMessage()); 
     }
   }
+
+  public function delete($data = []){
+    try{
+      $query = $this->access->prepare("CALL spu_clientes_eliminar(?)")
+      $query->execute(
+        array(
+          $data['idcliente']
+        )
+      );
+    }catch(Exception $e){
+      die($e->getMessage());
+    }
+  }//delete()
+
+  public function getData($data = []){
+    try{
+      $query = $this->access->prepare("CALL spu_clientes_getdata(?)")
+      $query->execute(
+        array(
+          $data['idcliente']
+        )
+      );
+      return $query->fetchAll(PDO::FETCH_ASSOC);
+    }catch(Exception $e){
+      die($e->getCode());
+    }
+  }//getdata
 }

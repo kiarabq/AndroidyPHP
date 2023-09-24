@@ -6,22 +6,12 @@ CREATE TABLE clientes
 	idcliente		INT AUTO_INCREMENT PRIMARY KEY,
 	apellidos		VARCHAR(50)		NOT NULL,
 	nombres			VARCHAR(30)		NOT NULL,
-	dni				CHAR(8)			NOT NULL,
-	claveacceso		VARCHAR(200)	NOT NULL
+	dni				CHAR(8)			NOT NULL
 )ENGINE = INNODB;
 
-INSERT INTO clientes (apellidos, nombres, dni, claveacceso) VALUES
-('Martinez', 'Maria', '78291819', '123456'),
-('Torres Aguilar', 'Luis', '71891910', '123456');
-
--- la contraseña es 123456
-	UPDATE clientes
-		SET claveacceso = '$2y$10$XBtQxtiGQ/e1kJWgZeMxqOYRw0E.beloHb0Y5elza6c0481x9n.ES'
-		WHERE idcliente = 1;
-		
-	UPDATE clientes
-		SET claveacceso = '$2y$10$8I1g68LMGr73lFhXizOrTOO/S4i6OoWnEKK/NzHjrxf3OA8R91jOq'
-		WHERE idcliente = 2;
+INSERT INTO clientes (apellidos, nombres, dni) VALUES
+('Martinez', 'Maria', '78291819'),
+('Torres Aguilar', 'Luis', '71891910');
 	
 SELECT * FROM clientes;
 

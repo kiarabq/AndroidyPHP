@@ -15,4 +15,24 @@ if (isset($_POST['operacion'])){
     ];
     $mascota->add($registro);
   }
+
+  //Eliminar
+  if($_POST['operacion'] == 'delete'){
+    $mascota->delete(
+      [
+        'idmascota' => $_POST['idmascota']
+      ]
+    );
+  }
+}
+
+//Listar(solicitudes)
+if(isset($_GET['operacion'])){
+  if($_GET['operacion'] == 'list'){
+    echo json_encode($mascota->list());
+  }
+
+  if ($_GET['operacion'] == 'getData'){
+    echo json_encode($mascota->getData(["idmascota" => $_GET['idmascota']]));
+  }
 }
