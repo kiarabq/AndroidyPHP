@@ -6,11 +6,10 @@ $mascota = new Mascota();
 if (isset($_POST['operacion'])){
   if($_POST['operacion'] == 'add'){
     $registro = [
-      "idcliente"   => $_POST['idcliente'],
-      "idraza"      => $_POST['idraza'],
       "nombre"      => $_POST['nombre'],
-      "fotografia"  => $_POST['fotografia'],
       "color"       => $_POST['color'],
+      "especie"     => $_POST['especie'],
+      "raza"        => $_POST['raza'],
       "genero"      => $_POST['genero']
     ];
     $mascota->add($registro);
@@ -23,6 +22,40 @@ if (isset($_POST['operacion'])){
         'idmascota' => $_POST['idmascota']
       ]
     );
+  }
+
+  //Actualizar
+  if($_POST['operacion'] == 'update'){
+    $registro = [
+      "idmascota" => $_POST['idmascota'],
+      "nombre"    => $_POST['nombre'],
+      "color"     => $_POST['color'],
+      "especie"   => $_POST['especie'],
+      "raza"      => $_POST['raza'],
+      "genero"    => $_POST['genero']
+    ];
+  }
+
+  //Eliminar
+  if($_POST['operacion'] == 'delete'){
+    $mascota->delete(
+      [
+        'idmascota' => $_POST['idmascota']
+      ]
+      );
+  } 
+  
+  //Actualizar
+  if($_POST['operacion'] == 'update'){
+    $registro = [
+      "idmascota" => $_POST['idmascota'],
+      "nombre"    => $_POST['nombre'],
+      "color"     => $_POST['color'],
+      "especie"   => $_POST['especie'],
+      "raza"      => $_POST['raza'],
+      "genero"    => $_POST['genero']
+    ];
+    $mascota->update($registro);
   }
 }
 

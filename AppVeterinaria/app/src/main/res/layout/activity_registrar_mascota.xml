@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"/>
 
     <EditText
-        android:id="@+id/idNombre"
+        android:id="@+id/idNombreMascota"
         android:hint="Nombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,12 +33,28 @@
         android:layout_marginBottom="15dp"/>
 
     <EditText
-        android:id="@+id/idGenero"
-        android:hint="Género"
+        android:id="@+id/idEspecie"
+        android:hint="Especie"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"/>
+
+    <EditText
+        android:id="@+id/idRaza"
+        android:hint="Raza"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"/>
+
+    <Spinner
+        android:id="@+id/idGenero"
+        android:layout_marginTop="15dp"
+        android:padding="15dp"
+        android:layout_marginBottom="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/btGuardarMascota"
@@ -47,4 +63,6 @@
         android:layout_marginBottom="15dp"
         android:layout_marginTop="35dp"
         android:text="Guardar" />
+
+
 </LinearLayout>

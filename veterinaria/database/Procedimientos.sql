@@ -82,25 +82,24 @@ SELECT * FROM clientes;
 DELIMITER $$
 CREATE PROCEDURE spu_mascotas_registrar
 (
-	IN _idcliente		INT,
-	IN _idraza		INT,
 	IN _nombre		VARCHAR(30),
 	IN _color		VARCHAR(30),
+	IN _especie		VARCHAR(30),
+	IN _raza		VARCHAR(30),
 	IN _genero		CHAR(1)
 )
 BEGIN 
 	INSERT INTO mascotas
-	(idcliente, idraza, nombre, color, genero)
-	VALUES (_idcliente, _idraza, _nombre, _color, _genero);
+	(nombre, color, especie, raza, genero)
+	VALUES (_nombre, _color, _especie, _raza, _genero);
 END $$
 
-CALL spu_mascotas_registrar(2, 2, 'Pelusa', 'Plomo', 'H');
+CALL spu_mascotas_registrar('Pelusa', 'Plomo', 'Gato', 'Siamés', 'M');
 
 DELIMITER $$
 CREATE PROCEDURE spu_mascotas_listar()
 BEGIN
-	SELECT idmascota, idcliente,
-	idraza, nombre, color, genero
+	SELECT idmascota, nombre, color, especie, raza, genero
 		FROM mascotas
 		WHERE inactive_at IS NULL
 		ORDER BY idmascota DESC;
@@ -123,9 +122,10 @@ DELIMITER $$
 CREATE PROCEDURE spu_mascotas_getData(IN _idmascota INT)
 BEGIN
 	SELECT 
-		idmascota, idcliente,
-		idraza, nombre,
-		color, genero
+		idmascota,
+		nombre,
+		color, especie,
+		raza, genero
 		FROM mascotas
 		WHERE idmascota = _idmascota;
 END $$
@@ -134,18 +134,18 @@ DELIMITER $$
 CREATE PROCEDURE spu_mascotas_actualizar
 (
 IN _idmascota		INT,
-IN _idcliente		INT,
-IN _idraza		INT,
 IN _nombre		VARCHAR(30),
 IN _color		VARCHAR(30),
+IN _especie		VARCHAR(30),
+IN _raza		VARCHAR(30),
 IN _genero		CHAR(1)
 )
 BEGIN
 	UPDATE mascotas SET
-    idcliente = _idcliente,
-    idraza = _idraza,
     nombre = _nombre,
     color = _color,
+    especie = _especie,
+    raza = _raza,
     genero = _genero,
     update_at = NOW()
     WHERE idmascota = idmascota;
