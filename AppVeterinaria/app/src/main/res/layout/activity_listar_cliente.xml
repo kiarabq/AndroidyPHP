@@ -9,7 +9,7 @@
     tools:context=".ListarCliente">
 
     <ListView
-        android:id="@+id/lvColaboradores"
+        android:id="@+id/lvClientes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 

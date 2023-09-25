@@ -6,7 +6,10 @@ CREATE TABLE clientes
 	idcliente		INT AUTO_INCREMENT PRIMARY KEY,
 	apellidos		VARCHAR(50)		NOT NULL,
 	nombres			VARCHAR(30)		NOT NULL,
-	dni				CHAR(8)			NOT NULL
+	dni				CHAR(8)			NOT NULL,
+	inactive_at		DATETIME		NULL,
+	register_at		DATETIME		NOT NULL DEFAULT NOW(),
+	update_at		DATETIME		NULL
 )ENGINE = INNODB;
 
 INSERT INTO clientes (apellidos, nombres, dni) VALUES
@@ -47,9 +50,11 @@ CREATE TABLE mascotas
 	idcliente		INT            NOT NULL,
 	idraza			INT            NOT NULL,
 	nombre			VARCHAR(30)		NOT NULL,
-	fotografia		VARCHAR(200),
-	color				VARCHAR(30)		NOT NULL,
+	color			VARCHAR(30)		NOT NULL,
 	genero			CHAR(1)			NOT NULL,
+	create_at			DATETIME		NULL,
+	inactive_at			DATETIME		NULL,
+	update_at			DATETIME		NULL,
 	CONSTRAINT fk_idcliente FOREIGN KEY (idcliente) REFERENCES clientes(idcliente),
 	CONSTRAINT fk_idraza FOREIGN KEY (idraza) REFERENCES razas(idraza),
 	CONSTRAINT ck_genero CHECK (genero IN ('H','M'))

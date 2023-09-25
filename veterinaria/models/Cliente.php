@@ -4,7 +4,7 @@ require_once 'Conexion.php';
 class Cliente extends Conexion{
   private $access;
 
-  public function __CONSTRUCTOR__(){
+  public function __CONSTRUCT(){
     $this->access = parent::getConexion();
   }
 
@@ -25,7 +25,7 @@ class Cliente extends Conexion{
 
   public function list(){
     try{
-      $query = $this->access->prepare("CALL spu_clientes_listar(?,?,?,?)");
+      $query = $this->access->prepare("CALL spu_clientes_listar()");
       $query->execute();
       return $query->fetchAll(PDO::FETCH_ASSOC);
     }catch(Exception $e){
@@ -35,7 +35,7 @@ class Cliente extends Conexion{
 
   public function delete($data = []){
     try{
-      $query = $this->access->prepare("CALL spu_clientes_eliminar(?)")
+      $query = $this->access->prepare("CALL spu_clientes_eliminar(?)");
       $query->execute(
         array(
           $data['idcliente']
@@ -48,7 +48,7 @@ class Cliente extends Conexion{
 
   public function getData($data = []){
     try{
-      $query = $this->access->prepare("CALL spu_clientes_getdata(?)")
+      $query = $this->access->prepare("CALL spu_clientes_getdata(?)");
       $query->execute(
         array(
           $data['idcliente']
@@ -59,4 +59,20 @@ class Cliente extends Conexion{
       die($e->getCode());
     }
   }//getdata
+
+  public function update($data = []){
+    try{
+      $query = $this->access->prepare("CALL spu_clientes_actualizar(?,?,?,?)");
+      $query->execute(
+        array(
+          $data['idcliente'],
+          $data['apellidos'],
+          $data['nombres'],
+          $data['dni']
+        )
+      );
+    }catch(Exception $e){
+        die($e->getMessage());
+      }
+    } //update
 }

@@ -1,50 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="20dp"
     android:orientation="vertical"
-    tools:context=".RegistrarMascota">
+    tools:context=".EditarCliente">
 
     <TextView
-        android:text="Registrar Mascota"
-        android:textAlignment="center"
+        android:layout_width="match_parent"
         android:textSize="25dp"
-        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_marginBottom="15dp"
         android:layout_marginTop="15dp"
-        android:layout_height="wrap_content"/>
+        android:text="Actualizar Cliente" />
 
     <EditText
-        android:id="@+id/idNombre"
-        android:hint="Nombre"
+        android:id="@+id/idUpdApellidos"
+        android:hint="Apellidos"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:layout_marginBottom="15dp"/>
 
     <EditText
-        android:id="@+id/idColor"
-        android:hint="Color"
+        android:id="@+id/idUpdNombres"
+        android:hint="Nombres"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"/>
+        android:layout_marginBottom="15dp" />
 
     <EditText
-        android:id="@+id/idGenero"
-        android:hint="Género"
+        android:id="@+id/idUpdDni"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
         android:layout_marginTop="15dp"
-        android:layout_marginBottom="15dp"/>
+        android:hint="DNI"
+        android:ems="8"
+        android:inputType="number" />
 
     <Button
-        android:id="@+id/btGuardarMascota"
+        android:id="@+id/btActualizarCliente"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
         android:layout_marginTop="35dp"
-        android:text="Guardar" />
+        android:text="Actualizar" />
+
+    <Button
+        android:id="@+id/btCancelarActualizar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cancelar" />
+
 </LinearLayout>

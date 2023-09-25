@@ -13,7 +13,7 @@ public class Home extends AppCompatActivity {
     Button btRegistrarC, btListarC, btRegistrarM, btListarM;
 
     //Constante
-    final String URL= "";
+    final String URL= "http://192.168.1.41/veterinaria/controllers/cliente.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

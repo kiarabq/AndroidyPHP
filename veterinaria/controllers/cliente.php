@@ -7,9 +7,8 @@ if (isset($_POST['operacion'])){
   if($_POST['operacion'] =='add'){
     $registro = [
       "apellidos" => $_POST['apellidos'],
-      "nombres" => $_POST['nombres'],
-      "dni" => $_POST['dni'],
-      "claveacceso" => $_POST['claveacceso']
+      "nombres"   => $_POST['nombres'],
+      "dni"       => $_POST['dni']
     ];
     $cliente->add($registro);
   }
@@ -21,6 +20,17 @@ if (isset($_POST['operacion'])){
         'idcliente' => $_POST['idcliente']
       ]
     );
+  }
+
+  //Actualizar
+  if($_POST['operacion'] == 'update'){
+    $registro = [
+      "idcliente" => $_POST['idcliente'],
+      "apellidos" => $_POST['apellidos'],
+      "nombres"   => $_POST['nombres'],
+      "dni"       => $_POST['dni']
+    ];
+    $cliente->update($registro);
   }
 }
 
