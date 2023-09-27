@@ -40,6 +40,7 @@
         android:layout_marginBottom="15dp"
         android:layout_marginTop="15dp"
         android:hint="DNI"
+
         android:ems="8"
         android:inputType="number" />
 
@@ -49,6 +50,16 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
         android:layout_marginTop="35dp"
+        app:cornerRadius="20dp"
+        android:backgroundTint="#00BCD4"
         android:text="Guardar" />
+
+    <Button
+        android:id="@+id/btBuscar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cornerRadius="20dp"
+        android:backgroundTint="#00BCD4"
+        android:text="Buscar Cliente" />
 
 </LinearLayout>

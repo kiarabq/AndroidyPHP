@@ -14,14 +14,17 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textSize="25dp"
+        android:layout_marginTop="60dp"
         android:layout_marginBottom="25dp"
-        android:text="VETERINARIA" />
+        android:text="Página Principal" />
 
     <Button
         android:id="@+id/btRegistrarC"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
+        app:cornerRadius="20dp"
+        android:backgroundTint="#00BCD4"
         android:text="Registrar Cliente" />
 
     <Button
@@ -29,6 +32,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
+        app:cornerRadius="20dp"
+        android:backgroundTint="#00BCD4"
         android:text="Listar Cliente" />
 
     <Button
@@ -36,6 +41,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
+        app:cornerRadius="20dp"
+        android:backgroundTint="#00BCD4"
         android:text="Registrar Mascota" />
 
     <Button
@@ -43,5 +50,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
+        android:backgroundTint="#00BCD4"
+        app:cornerRadius="20dp"
         android:text="Listar Mascota"/>
 </LinearLayout>

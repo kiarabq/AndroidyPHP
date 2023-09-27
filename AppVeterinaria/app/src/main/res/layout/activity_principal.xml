@@ -8,12 +8,19 @@
     android:padding="20dp"
     tools:context=".Principal">
 
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        app:srcCompat="@drawable/login" />
+
     <TextView
         android:id="@+id/login"
-        android:layout_marginTop="200dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textAlignment="center"
+        android:textStyle="bold"
+        android:layout_marginTop="15dp"
         android:textSize="28dp"
         android:text="INICIAR SESIÓN" />
 
@@ -32,10 +39,19 @@
         android:hint="Contraseña"
         android:ems="10"
         android:inputType="numberPassword" />
+    <Button
+        android:id="@+id/btenter"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#00BCD4"
+        app:cornerRadius="20dp"
+        android:text="Entrar" />
 
     <Button
         android:id="@+id/btentrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Entrar" />
+        app:cornerRadius="20dp"
+        android:backgroundTint="#00BCD4"
+        android:text="Registrate" />
 </LinearLayout>

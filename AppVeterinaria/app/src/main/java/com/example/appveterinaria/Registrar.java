@@ -5,6 +5,7 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -26,7 +27,7 @@ import java.util.Map;
 public class Registrar extends AppCompatActivity {
 
     EditText idApellidos, idNombres, idDni;
-    Button btGuardar;
+    Button btGuardar, btBuscar;
     String apellidos, nombres, dni;
 
     //Constante
@@ -48,6 +49,19 @@ public class Registrar extends AppCompatActivity {
                 validar();
             }
         });
+
+        btBuscar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openActivity(BuscarCliente.class);
+            }
+        });
+
+    }
+
+    private void openActivity(Class nameActivity){
+        Intent intent= new Intent(getApplicationContext(), nameActivity);
+        startActivity(intent);
     }
 
     private void validar(){
@@ -139,6 +153,7 @@ public class Registrar extends AppCompatActivity {
         idDni = findViewById(R.id.idDni);
 
         btGuardar = findViewById(R.id.btGuardar);
+        btBuscar = findViewById(R.id.btBuscar);
 
     }
 }
